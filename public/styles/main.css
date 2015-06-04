@@ -1,18 +1,120 @@
 @import "fonts.css";
 
+
 body {
-  background: #ec008c;
-  color: #fff;
+    background: #ec008c;
+    background: #FFF;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.u-container{
+    width: 1280px;
+    margin: 0 auto;
 }
 
-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font: 20vmin/1 HUGEAvantGardeBold;
-  letter-spacing: -0.06em;
-  text-align: center;
+.MainMenu{
+    background: #ec008c;
+    font-size: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0 24px;
+}
+.MainMenu-title{    
+    line-height: 24px;
+    margin: 24px 0;
+    text-indent: 9999;
+}
+.MainMenu-item{
+    display: inline-block;
+    font: 21px/48px HUGEAvantGardeBold;
+    height: 100%;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.MainMenu-item-link{
+    color: #FFF;
+    display: block;
+    height: 73px;
+    line-height: 73px;
+    padding: 0 24px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+}
+.MainMenu-item:hover > .MainMenu-item-link{
+    background: #FFF;
+    color: #ec008c
+}
+.MainMenu > .MainMenu-item:first-child{
+    margin-right: 48px;
+}
+.MainMenu > .MainMenu-item:first-child .MainMenu-item-link{
+    height: auto;
+    line-height: inherit;
+    padding: 0;
+}
+.MainMenu > .MainMenu-item:first-child .MainMenu-item-link:hover{
+    background: #ec008c;
+}
+
+.MainMenu-item:hover > .MainMenu-subMenu{
+    background: #FFF;
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+.MainMenu-subMenu{
+    background: #000;
+    display: block;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 12px 0;
+    position: absolute;
+    top: auto;
+    visibility: hidden;
+    z-index: 3;
+
+    -webkit-transition: all .5s ease-in-out .2s;
+    -o-transition: all .5s ease-in-out .2s;
+    transition: all .5s ease-in-out .2s;
+}
+.MainMenu-subMenu .MainMenu-item{
+    display: block;
+    font: 16px/48px Galaxie;
+}
+.MainMenu-subMenu .MainMenu-item-link{
+    color: #000;
+    height: 48px;
+    line-height: 48px;
+}
+.MainMenu-subMenu .MainMenu-item-link:hover{
+    background: #eee;
+    color: #ec008c;
+}
+.MainBanner-figure{
+    margin: 0;
+    position: relative;
+}
+.MainBanner-image{
+    display: block;
+}
+.MainBanner-caption{
+    font: 120px/132px HUGEAvantGardeBold;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 29%;
+    width: 100%;
+}
+.Introduction{
+    color: #000;
+    font: 24px/36px Galaxie;
+    margin-top: 60px;
+    text-align: center;
 }
