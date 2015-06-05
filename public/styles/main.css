@@ -12,8 +12,9 @@ a{
     text-decoration: none;
 }
 .u-container{
-    width: 1280px;
     margin: 0 auto;
+    position: relative;
+    width: 1280px;
 }
 
 .MainMenu{
@@ -50,6 +51,10 @@ a{
     background: #FFF;
     color: #ec008c
 }
+.MainMenu-item-link.is-hovered{
+    background: #FFF;
+    color: #ec008c
+}
 .MainMenu > .MainMenu-item:first-child{
     margin-right: 48px;
 }
@@ -62,14 +67,15 @@ a{
     background: #ec008c;
 }
 
-.MainMenu-item:hover > .MainMenu-subMenu{
+.MainMenu-item .MainMenu-item-link:focus ~ .MainMenu-subMenu{
     background: #FFF;
     display: block;
     opacity: 1;
     visibility: visible;
+    z-index: 3;
 }
 .MainMenu-subMenu{
-    background: #000;
+    background: #ec008c;
     display: block;
     left: 0;
     margin: 0;
@@ -78,11 +84,19 @@ a{
     position: absolute;
     top: auto;
     visibility: hidden;
-    z-index: 3;
+    z-index: -1;
 
-    -webkit-transition: all .5s ease-in-out .2s;
-    -o-transition: all .5s ease-in-out .2s;
-    transition: all .5s ease-in-out .2s;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.MainMenu-subMenu.is-expanded{
+    background: #FFF;
+    display: block;
+    opacity: 1;
+    top: 73px;
+    visibility: visible;
+    z-index: 3;
 }
 .MainMenu-subMenu .MainMenu-item{
     display: block;
@@ -117,4 +131,17 @@ a{
     font: 24px/36px Galaxie;
     margin-top: 60px;
     text-align: center;
+}
+.Mask{
+    display: none;
+}
+.Mask.is-visible{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
