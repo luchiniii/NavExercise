@@ -11,6 +11,9 @@ body {
 a{
     text-decoration: none;
 }
+nav{
+    position: relative;
+}
 .u-container{
     margin: 0 auto;
     position: relative;
@@ -144,4 +147,152 @@ a{
     top: 0;
     width: 100%;
     z-index: 2;
+}
+
+.Mobile{
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: -100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.Mobile.is-shown{
+    left: 0;
+}
+
+.MobileMenu{
+    background: #FFF;
+    display: block;
+    font: 16px/48px HUGEAvantGardeBold;
+    height: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    top: auto;
+    width: 250px;
+}
+.MobileClose{
+    background: #ec008c;
+    padding: 0 0 0 24px;
+    overflow: hidden;
+}
+.MobileClose-logo{
+    display: block;
+    height: auto;
+    vertical-align: middle;
+    float: left;
+    margin-top: 20px;
+}
+.MobileClose-close{
+    display: block;
+    float: right;
+}
+.MobileClose-logo-img,
+.MobileClose-close-img{
+    display: block;
+}
+.MobileMenu-item{
+    color: #000;
+    display: block;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.MobileMenu-item:first-child,
+.MobileMenu-item:last-child{
+    margin-top: 12px;
+}
+.MobileMenu-item.is-hoveredm{
+    color: #000;
+}
+.MobileMenu-item.is-hoveredm > .MobileMenu-item-link{
+    background: #eee;
+}
+.MobileMenu-item.is-hoveredm .MobileMenu-subMenu{
+    display: block;
+}
+.MobileMenu-item-link{
+    color: #000;
+    display: block;
+    height: 100%;
+    padding-left: 24px;
+    width: auto;
+}
+.MobileMenu-item-link--hasSub:after{
+    color: #ec008c;
+    content: '\003C';
+    display: block;
+    float: right;
+    font-size: 25px;
+    margin-right: 10px;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.MobileMenu-subMenu{
+    display: none;
+    list-style: none;
+    padding: 0;
+    font: 16px/48px Galaxie;
+}
+.MobileMenu-subMenu .MobileMenu-item{
+    padding-left: 0;
+}
+.MobileMenu.is-open:before{
+    background-size: 26px 24px;
+    background: url('../images/toggle-open.svg');
+    content: '';
+    height: 24px;
+    width: 26px;
+}
+.BurgerIcon{
+    background: #ec008c;
+    display: none;
+}
+
+@media screen and (max-width: 1280px) {
+    .MainBanner-image{
+        width: 100%;
+    }
+    .u-container{
+        width: 100%;
+    }
+    .MainBanner-caption{
+        top: 10%;
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .MainBanner-image{
+        width: 100%;
+    }
+    .u-container{
+        width: 100%;
+    }
+    .MainMenu{
+        display: none;
+    }
+    .BurgerIcon{
+        display: block;
+    }
+    .BurgerIcon-icon{
+        display: block;
+    }
+    .MainBanner-caption{
+        color: #000;
+        line-height: 1;
+        margin-top: 50px;
+        position: relative;
+    }
+    .Introduction{
+        margin-top: 50px;
+    }
 }
